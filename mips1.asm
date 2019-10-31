@@ -26,6 +26,7 @@ vetor:
 add $t2,$zero,$a0
 addi $sp,$sp,-4  #topo = topo - 4
 sw $ra, 4($sp)   #topo + 4 = ra
+lw $t4, 0($sp)
 
 do:              #do - while
 andi $t3,$s2,1   
@@ -44,6 +45,7 @@ add $t7,$t5,$t6   #t7 = t5 + t6
 addi $t7,$t7,1    #t7 = t7 + 1
 sw $t7,0($t0)
 voltar:
+add $s9, $t4,$t4
 addi $s2,$s2,1  #s2 = s2 + 1
 addi $t0,$t0,4  #mem = mem + 4
 bne $t2,$s2,do
